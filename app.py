@@ -11,8 +11,10 @@ app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 mongo = PyMongo(app)
 
 @app.route('/')
-def hello():
-    return "hello world"
+@app.route('/get_tasks')
+def get_tasks():
+    return render_template("books.html", 
+                           books=mongo.db.books.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

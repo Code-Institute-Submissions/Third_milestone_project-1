@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+        <ul class="collapsible" data-collapsible="accordion">
+            {% for book in books %}
+                <li>
+                    <div class="collapsible-header">
+                        <div class=" task_header col s9">
+                            <strong>{{book.name}}</strong> - {{book.author}}
+                        </div>
+                    </div>
+                    <div class="collapsible-body">
+                        <span>
+                        {{book.description}} 
+                        </span>
+                    </div>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</body>
+</html>

@@ -14,7 +14,7 @@ mongo = PyMongo(app)
 @app.route('/get_tasks')
 def get_tasks():
     return render_template("books.html", 
-                           books=mongo.db.books.find())
+                           books=mongo.db.Books.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

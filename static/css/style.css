@@ -13,3 +13,8 @@ body {
 .task_header {
     margin-top: 5px;
 }
+
+.image-size {
+    height: -10px;
+    width: -10px;
+}

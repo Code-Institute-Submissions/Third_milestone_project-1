@@ -1,7 +1,5 @@
 body {
   padding-top: 56px;
-  padding-left: -300px;
-  padding-right: -300px;
 }
 
 *.btn_small {
@@ -20,4 +18,9 @@ body {
     width: 50%;
     height: 15vw;
     object-fit: cover;
+}
+
+.size-image {
+    width: 10px;
+    height: 10px;
 }

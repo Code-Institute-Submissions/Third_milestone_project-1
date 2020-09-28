@@ -1,5 +1,6 @@
 body {
   padding-top: 56px;
+  margin-right: 0px;
 }
 
 *.btn_small {
@@ -12,15 +13,4 @@ body {
 
 .task_header {
     margin-top: 5px;
-}
-
-.card-img-top {
-    width: 50%;
-    height: 15vw;
-    object-fit: cover;
-}
-
-.size-image {
-    width: 10px;
-    height: 10px;
 }

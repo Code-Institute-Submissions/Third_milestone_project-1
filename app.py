@@ -14,7 +14,15 @@ mongo = PyMongo(app)
 @app.route('/get_tasks')
 def get_tasks():
     return render_template("books.html", 
-                           books=mongo.db.Books.find(),names=mongo.db.Books.find(),reviews=mongo.db.Books_reveiws.find())
+                           books=mongo.db.Books.find(),names=mongo.db.Books.find())
+
+@app.route('/detail_book/<name>')
+def detail_book(name):
+    book = mongo.db.Books.find_one({'name':name})
+    review = mongo.db.Books_reviews.find_one({'name':name})
+    return render_template('detail_book.html', books=book,reviews=review)
+
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block content %} 
+    {% for book in books %}
+    <div>
+        <div class="card mt-5 card-body">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3 class="card-title">{{book.name}}</h3>
+                    <h3 class="card-title">{{book.author}}</h3>
+                    <p class="card-text">{{book.description}}</p>
+                    <p class="card-text">Price: {{book.price}}</p>
+                    <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                </div>
+                <div class="col-lg-4 photo-box">
+                    <img class="img-fluid" src="{{book.image}}" alt="">
+                </div>
+            </div>
+        </div> 
+        
+        <div class="card card-outline-secondary my-4">
+            <div class="card-header">Product Reviews</div>
+            <div class="card-margin card-body">
+                {% for review in reviews %}
+                {% if review.name == book.name %}
+                    <p>{{review.review_1}}</p>
+                    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+                    <hr>
+                    <p>{{review.review_2}}</p>
+                    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+                    <hr>
+                    <p>{{review.review_3}}</p>
+                    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+                    <hr>
+                    <p>{{review.review_4}}</p>
+                    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+                    <hr>
+                    <a href="#" class="btn btn-success">Leave a Review</a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

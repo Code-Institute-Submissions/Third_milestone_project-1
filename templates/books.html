@@ -5,9 +5,9 @@
         <div class="card mt-5 card-body">
             <div class="row">
                 <div class="col-lg-8">
-                    <h3 class="card-title"><a href="{{ url_for('detail_book', name=book.name) }}">{{book.name }}</a></h3>
+                    <h3 class="card-title">{{book.name }}</h3>
                     <h3 class="card-title">{{book.author}}</h3>
-                    <p class="card-text">{{book.description}}</p>
+                    <p class="card-text">{{book.description}}<a href="{{ url_for('detail_book', book_id=book._id, book_name=book.name) }}"> Read more...</a></p>
                     <p class="card-text">Price: {{book.price}}</p>
                     <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
                 </div>

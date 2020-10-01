@@ -18,13 +18,13 @@
         <div class="card card-outline-secondary my-4">
             <div class="card-header">Product Reviews</div>
             <div class="card-margin card-body">
-                {% for review in  reviews %}
-                    {% if "review" in review %}
-                        <p>{{reviews.review[0]}}</p>
-                        <small class="text-muted">Posted by {{reviews.review[1]}} on {{reviews.review[2]}}</small>
+                {% for review  in  reviews %}
+                    {% for k,v in review.items() %}
+                        <p>{{k.value()}}</p>
+                        <small class="text-muted">Posted by on </small>
                         <hr>
                         <a href="#" class="btn btn-success">Leave a Review</a>
-                    {% endif %}
+                    {% endfor %}
                 {% endfor %}
             </div>
         </div>

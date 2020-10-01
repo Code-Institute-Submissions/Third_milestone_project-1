@@ -10,6 +10,7 @@ app.config["MONGO_URI"] = 'mongodb+srv://plxsas:Salha2019@cluster1.cqq5g.mongodb
 
 mongo = PyMongo(app)
 
+
 @app.route('/')
 @app.route('/get_books')
 def get_tasks():
@@ -21,8 +22,6 @@ def detail_book(book_id, book_name):
     book = mongo.db.Books.find_one({"_id": ObjectId(book_id)})
     review = mongo.db.books_reveiws.find_one({"name": book_name})
     return render_template('detail_book.html', book=book, reviews=review)
-
-
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

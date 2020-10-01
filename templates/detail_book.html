@@ -18,9 +18,9 @@
         <div class="card card-outline-secondary my-4">
             <div class="card-header">Product Reviews</div>
             <div class="card-margin card-body">
-                {% for review  in  reviews %}
-                    {% for k,v in review.items() %}
-                        <p>{{k.value()}}</p>
+                {% for review in reviews %}
+                    {% for affect in review %} 
+                        <p>{{affect}}</p>
                         <small class="text-muted">Posted by on </small>
                         <hr>
                         <a href="#" class="btn btn-success">Leave a Review</a>

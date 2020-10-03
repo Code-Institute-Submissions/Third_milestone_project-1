@@ -17,17 +17,26 @@ def get_tasks():
     return render_template("books.html", 
                            books=mongo.db.Books.find())
                            
-
 @app.route('/detail_book/<book_id>/<book_name>')
 def detail_book(book_id, book_name):
     book = mongo.db.Books.find_one({"_id": ObjectId(book_id)})
     review = mongo.db.books_reviews.find_one({"name": book_name})
     return render_template('detail_book.html', book=book, reviews=review)
-    
-@app.route('/add_review')
-def add_review():
-    return "hello world"
 
+@app.route('/add_review/<review_id>')
+def add_review(review_id):
+    review = mongo.db.books_reviews.find_one({"_id":ObjectId(review_id)})
+    return render_template('addreview.html', review=review)
+
+
+@app.route('/insert_review/<review_id>', methods=['POST'])
+def insert_review(review_id):
+    review = mongo.db.books_reviews.find({"_id":ObjectId(review_id)})
+    name = request.values.get("name")    
+    review = request.values.get("review")    
+    date = request.values.get("date")       
+    review.insert({ name: {"review": review, "date": date}}) 
+    return render_template('detail_book.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

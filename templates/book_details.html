@@ -63,7 +63,32 @@
             </div>
         </div>
 
+@app.route("/done")    
+def done ():    
+    #Done-or-not ICON    
+    id=request.values.get("_id")    
+    task=todos.find({"_id":ObjectId(id)})    
+    if(task[0]["done"]=="yes"):    
+        todos.update({"_id":ObjectId(id)}, {"$set": {"done":"no"}})    
+    else:    
+        todos.update({"_id":ObjectId(id)}, {"$set": {"done":"yes"}})    
+    redir=redirect_url()        
+    
+    return redirect(redir)    
+  
+@app.route("/action", methods=['POST'])    
+def action ():    
+    #Adding a Task    
+    name=request.values.get("name")    
+    desc=request.values.get("desc")    
+    date=request.values.get("date")    
+    pr=request.values.get("pr")    
+    todos.insert({ "name":name, "desc":desc, "date":date, "pr":pr, "done":"no"})    
+    return redirect("/list")  
+
 
 db.reviews_book.insertOne( { x: 1 } )
 
 db.reviews_book.insertOne( {"name": "The Social Animal","review_1": "I read this for a Social Psychology class I took, in college. Honestly, this is the kind of book kids should be reading in middle or high school. Instead of To Kill a Mockingbird or To Kill a Mockingbird. It was interesting but not as advanced as I would've liked. Nevertheless, you probably have to read it for your college class and you're just wasting time reading the reviews even though you're going to have to read it whether you want to or not to get the credit, to get your degree.","review_2": "I enjoy a bit of sociology and as a mid level manager hope that my reading in leadership and management has helped me be a better manager. However, this collection and style of writing is the best I have yet read. It covers all the studies I have been exposed to in other readings and yet peppered in is the author thoughts and examples from current events. I enjoyed the mix. I better understand myself and groups from this material and hopefully can be provide more positive interactions to others. Thank you for the book and the many revisions.","review_3": "I read this book in fall 2014 for my social psych class, and i loved it. it's not a textbook, it's written like any other reading book that one *doesn't* purchase for school. it's easy to read, entertaining, straightforward. you don't have to be a psych major to understand or enjoy it [im not, i took it for general ed]. i bought it voluntarily in fall 2016, because i liked the book that much.", "review_4": "This book was heavily marked with different colors, some were dark and made it very hard to read. It looks like a few people have marked all but a few chapters. I was enrolled for a class in June and I dropped it and started it last week so I hadn't looked at the book until last week. So now it is too late to return it. I will have to buy another one very inconvenient and frustrating, certainly not worth saving a few bucks. This book is useless to me."} )
+
+

@@ -21,11 +21,11 @@
                 {% for key1,item1 in reviews.items() %}
                     {% if loop.index > 2 %}
                         <p>{{ item1.review }}</p>
-                        <small class="text-muted">Posted by on {{ item1.name }} by {{ item1.date}}</small>
+                        <small class="text-muted">Posted by on {{ item1.date }} by {{ key1}}</small>
                         <hr>
                     {% endif %}
                 {% endfor %}
-                <a class="btn btn-success" href="{{ url_for('insert_review') }}"> Leave a Review</a>
+                <a class="btn btn-success" href="{{ url_for('add_review', review_id=reviews._id )}}">Leave a Review</a>
             </div>
         </div>
     </div>

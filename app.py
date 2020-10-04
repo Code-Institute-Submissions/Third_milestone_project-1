@@ -31,12 +31,13 @@ def add_review(review_id):
 
 @app.route('/insert_review/<review_id>', methods=['POST'])
 def insert_review(review_id):
-    review = mongo.db.books_reviews.find({"_id":ObjectId(review_id)})
     name = request.values.get("name")    
     review = request.values.get("review")    
     date = request.values.get("date")       
-    review.insert({ name: {"review": review, "date": date}}) 
-    return render_template('detail_book.html')
+    mongo.db.books_reviews.update({"_id": ObjectId("5f78555d682198206cebbf7d")}, {"$set": { name: {"review": review, "date": date}}}) 
+    return redirect(url_for('/detail_book/<book_id>/<book_name>'))
+
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

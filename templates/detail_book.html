@@ -25,7 +25,7 @@
                         <hr>
                     {% endif %}
                 {% endfor %}
-                <a class="btn btn-success" href="{{ url_for('add_review', review_id=reviews._id )}}">Leave a Review</a>
+                <a class="btn btn-success" href="{{ url_for('add_review', book_name=book.name )}}">Leave a Review</a>
             </div>
         </div>
     </div>

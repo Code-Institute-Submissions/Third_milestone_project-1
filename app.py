@@ -23,21 +23,21 @@ def detail_book(book_id, book_name):
     review = mongo.db.books_reviews.find_one({"name": book_name})
     return render_template('detail_book.html', book=book, reviews=review)
 
-@app.route('/add_review/<review_id>')
-def add_review(review_id):
-    review = mongo.db.books_reviews.find_one({"_id":ObjectId(review_id)})
-    return render_template('addreview.html', review=review)
+@app.route('/add_review/<book_name>')
+def add_review(book_name):
+    book = mongo.db.Books.find_one({"name": book_name})
+    review = mongo.db.books_reviews.find_one({"name": book_name})
+    return render_template('addreview.html', review=review, book=book)
 
 
-@app.route('/insert_review/<review_id>', methods=['POST'])
-def insert_review(review_id):
+@app.route('/insert_review/<review_id>/<book_name>/<book_id>', methods=['POST'])
+def insert_review(review_id, book_name,book_id):
     name = request.values.get("name")    
     review = request.values.get("review")    
     date = request.values.get("date")       
-    mongo.db.books_reviews.update({"_id": ObjectId("5f78555d682198206cebbf7d")}, {"$set": { name: {"review": review, "date": date}}}) 
-    return redirect(url_for('/detail_book/<book_id>/<book_name>'))
-
-
+    mongo.db.books_reviews.update({"_id": ObjectId(review_id)}, {"$set": { name: {"review": review, "date": date}}}) 
+    return redirect(url_for('detail_book', book_id=book_id, book_name=book_name))
+    
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

@@ -1,21 +1,30 @@
 {% extends 'base.html' %} {% block content %}
     <div class="row" style="margin-left: -10rem; margin-right: 10rem; padding-top: 2rem;">
-        <div class="card col-md-4" style="margin-right: -4rem; height:1%;">
-            <p>add book</p>
-            <form>
+        <div class="col-md-4" style="margin-right: -4rem; height:1%;">
+            <p style="margin-top: 10px;">Recommended books</p>
+            <form action="{{ url_for('insert_book') }}" method="POST" style="margin-right: 30px;"> 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" sytle="border:10px;" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="exampleInputEmail1">Book name</label>
+                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter book name">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="exampleInputPassword1">Author name</label>
+                    <input type="text" name="author" class="form-control" id="exampleInputPassword1" placeholder="author name">
                 </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Book cover url</label>
+                    <input type="text" name="image" class="form-control" id="" placeholder="Price">
                 </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Price</label>
+                    <input type="text" name="price" class="form-control" id="" placeholder="Price">
+                </div>
+            
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Book introduction</label>
+                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
         <div class="card col-md-12" style="background-color: #f0f5f5; margin-right: -50rem; margin-left:5rem; width:950px;">

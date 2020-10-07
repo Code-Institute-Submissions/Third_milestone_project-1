@@ -13,9 +13,17 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route('/get_books')
-def get_tasks():
+def get_books():
     return render_template("books.html", 
                            books=mongo.db.Books.find())
+
+
+@app.route('/insert_book', methods=['POST'])
+def insert_book():
+    book = mongo.db.Books
+    book.insert_one(request.form.to_dict())
+    return redirect(url_for('get_books'))
+    
                            
 @app.route('/detail_book/<book_id>/<book_name>')
 def detail_book(book_id, book_name):

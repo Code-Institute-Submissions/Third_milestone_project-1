@@ -1,37 +1,21 @@
 {% extends 'base.html' %} {% block content %}
     <div class="row" style="margin-left: -10rem; margin-right: 10rem; padding-top: 2rem;">
-        <div class="card col-md-4" style="margin-right: -4rem; overflow:hidden; height:1%;">
+        <div class="card col-md-4" style="margin-right: -4rem; height:1%;">
             <p>add book</p>
             <form>
-                <div class="input-group mb-3" >
-                    <div class="input-group-prepend">
-                        <span class="input-group-text fa-book" style="width:45px; height: 45px; margin-right: 5px;" id="basic-addon1"><i class=""></i></span>
-                    </div>
-                    <input type="text" class="form-control" style="width: 5px;" placeholder="book name" aria-label="book name" aria-describedby="basic-addon1">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" sytle="border:10px;" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-append">
-                        <span class="input-group-text" style="width:45px; height: 45px; margin-right: 5px;" id="basic-addon2"></span>
-                    </div>
-                    <input type="text" class="form-control" style="width: 5px;" placeholder="author name" aria-label="author name" aria-describedby="basic-addon2">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
-
-                
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" style="width:45px; height: 45px; margin-right: 5px;" id="basic-addon3">url</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="https://..." style="width: 5px;" id="basic-url" aria-describedby="basic-addon3">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" style="width:45px; height: 45px; margin-right: 5px;">$</span>
-                    </div>
-                    <input type="text" class="form-control" style="width: 5px;" aria-label="Amount (to the nearest dollar)">
-                </div>
-                <a class="btn btn-success" href="">Add book</a>
+                    <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
         <div class="card col-md-12" style="background-color: #f0f5f5; margin-right: -50rem; margin-left:5rem; width:950px;">

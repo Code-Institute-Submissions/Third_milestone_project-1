@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
     <div class="row" style="margin-left: -10rem; margin-right: 10rem; padding-top: 2rem;">
         <div class="col-md-4" style="margin-right: -4rem; height:1%;">
-            <p style="margin-top: 10px;">Recommended books</p>
+            <p style="margin-top: 10px;">Add your books</p>
             <form action="{{ url_for('insert_book') }}" method="POST" style="margin-right: 30px;"> 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Book name</label>
@@ -13,7 +13,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Book cover url</label>
-                    <input type="text" name="image" class="form-control" id="" placeholder="Price">
+                    <input type="text" name="image" class="form-control" id="" placeholder="Http://...">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Price</label>
@@ -24,7 +24,11 @@
                     <label for="exampleFormControlTextarea1">Book introduction</label>
                     <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div>
+                    <button type="submit" style="padding-left: 15px; padding-right:15px;" class="btn btn-primary">Add book</button>
+                    <button type="submit" href="{{ url_for('update_book')}}"style="padding-left: 15px; padding-right:15px;" class="btn btn-primary">Edit book</button>
+                </div>
+                
             </form>
         </div>
         <div class="card col-md-12" style="background-color: #f0f5f5; margin-right: -50rem; margin-left:5rem; width:950px;">

@@ -23,7 +23,23 @@ def insert_book():
     book = mongo.db.Books
     book.insert_one(request.form.to_dict())
     return redirect(url_for('get_books'))
-    
+
+
+@app.route('/update_book')
+def update_book():
+    name = request.values.get("name")
+    book = mongo.db.Books.find_one({"name": name})
+    book.update(
+    {
+        'name': request.form.get('name'),
+        'author': request.form.get('author'),
+        'description': request.form.get('description'),
+        'price': request.form.get('price'),
+        'image': request.form.get('image')
+    })
+    return redirect(url_for('get_books'))
+
+
                            
 @app.route('/detail_book/<book_id>/<book_name>')
 def detail_book(book_id, book_name):

@@ -29,14 +29,15 @@ def insert_book():
 def update_book():
     name = request.values.get("name")
     book = mongo.db.Books.find_one({"name": name})
-    book.update(
-    {
-        'name': request.form.get('name'),
-        'author': request.form.get('author'),
-        'description': request.form.get('description'),
-        'price': request.form.get('price'),
-        'image': request.form.get('image')
-    })
+    if request.method == "POST":
+        book.update(
+        {
+            'name': request.form.get('name'),
+            'author': request.form.get('author'),
+            'description': request.form.get('description'),
+            'price': request.form.get('price'),
+            'image': request.form.get('image')
+        })
     return redirect(url_for('get_books'))
 
 

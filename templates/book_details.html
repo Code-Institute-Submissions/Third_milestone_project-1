@@ -138,3 +138,17 @@ db.reviews_book.insertOne( {"name": "The Social Animal","review_1": "I read this
                     </button>
                 </div>
             </form>
+
+
+            var form1 = document.getElementById("#editeupdate");
+        document.getElementById("#Add").addEventListener("click", function () {
+            form1.submit().action = "/insert_book";
+        });
+        var form2 = document.getElementById("#editeupdate");
+        document.getElementById("#Edit").addEventListener("click", function () {
+            form2.submit().action = "/update_book";
+        });
+        function myFunction() {
+        document.getElementById("#editeupdate");
+        document.getElementById("#editeupdate").action = "/update_book";
+        }

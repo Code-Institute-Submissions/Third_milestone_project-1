@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block content %}
     <div class="row" style="margin-left: -10rem; margin-right: 10rem; padding-top: 2rem;">
         <div class="col-md-4" style="margin-right: -4rem; height:1%;">
-            <p style="margin-top: 10px;">Add your books</p>
-            <form action="{{ url_for('insert_book') }}" method="POST" style="margin-right: 30px;"> 
+            <p style="margin-top: 10px; background-color: #f0f5f5; padding:3px; border-style: dotted; border-width: thin; text-align: center;">Add your books</p>
+            <form  method="POST" class="editeupdate" style="margin-right: 30px;"> 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Book name</label>
                     <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter book name">
@@ -24,12 +24,15 @@
                     <label for="exampleFormControlTextarea1">Book introduction</label>
                     <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
-                <div>
-                    <button type="submit" style="padding-left: 15px; padding-right:15px;" class="btn btn-primary">Add book</button>
-                    <button type="submit" href="{{ url_for('update_book')}}"style="padding-left: 15px; padding-right:15px;" class="btn btn-primary">Edit book</button>
-                </div>
+             </form>
+
+            <div class="collapsible-header">
+                <button type="submit" id="Add" style="padding-left: 15px; padding-right:15px;margin-right:3px;" class="btn btn-primary">Add book</button>
+                <button type="submit" id="Edit" style="padding-left: 15px; padding-right:15px; margin-left:3px;" class="btn btn-primary">Edit book</button> 
+            </div>
+
                 
-            </form>
+    
         </div>
         <div class="card col-md-12" style="background-color: #f0f5f5; margin-right: -50rem; margin-left:5rem; width:950px;">
             <div class="row">

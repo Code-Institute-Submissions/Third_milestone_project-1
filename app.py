@@ -25,11 +25,13 @@ def insert_book():
     return redirect(url_for('get_books'))
 
 
-@app.route('/update_book')
+@app.route('/update_book',  methods=['POST'])
 def update_book():
-    book = mongo.db.Books.find_one()
     if request.method == "POST":
-        book.update({"_id": ObjectId("5f7df98b205f53e577c0e429")},
+        name = request.form.get('name')
+        author = request.form.get('author')
+        book = mongo.db.Books.find_one({"name": name, "author": author})
+        book.update(
         {
             'name': request.form.get('name'),
             'author': request.form.get('author'),

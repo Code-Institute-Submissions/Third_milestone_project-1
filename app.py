@@ -27,10 +27,9 @@ def insert_book():
 
 @app.route('/update_book')
 def update_book():
-    name = request.values.get("name")
-    book = mongo.db.Books.find_one({"name": name})
+    book = mongo.db.Books.find_one()
     if request.method == "POST":
-        book.update(
+        book.update({"_id": ObjectId("5f7df98b205f53e577c0e429")},
         {
             'name': request.form.get('name'),
             'author': request.form.get('author'),

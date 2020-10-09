@@ -9,11 +9,9 @@
   <meta name="author" content="">
 
   <title>Books selection</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 
@@ -64,31 +62,21 @@
 
   <!-- Bootstrap core JavaScript -->
     <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    
     <script>
-        $(document).ready(function(){
-            $("#Add").click(function(){
-            $(".editeupdate").action='/insert_book'; 
-        });
-        });
-
-        $(document).ready(function(){
-            $("#Edit").click(function(){
-            $(".editeupdate").action='/update_book'; 
-        });
+    
+        $(document).ready(function() {
+            document.getElementById('.editeupdate').submit().
+            document.getElementById("add").action='/insert_book';
         });
 
         $(document).ready(function() {
-            $('.collapsible').collapsible();
-            $('select').material_select();
-            $(".button-collapse").sideNav();
+            document.getElementById('.editeupdate').submit().
+            document.getElementById("edit").action='/update_book';
         });
-
-         document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.datepicker');
-            var instances = M.Datepicker.init(elems, options);
-        });
+        
+       
     </script>
 
 </body>

@@ -2,7 +2,7 @@
     <div class="row" style="margin-left: -10rem; margin-right: 10rem; padding-top: 2rem;">
         <div class="col-md-4" style="margin-right: -4rem; height:1%;">
             <p style="margin-top: 10px; background-color: #f0f5f5; padding:3px; border-style: dotted; border-width: thin; text-align: center;">Add your books</p>
-            <form  method="POST" class="editeupdate" style="margin-right: 30px;"> 
+            <form  method="POST" id="editeupdate" style="margin-right: 30px;"> 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Book name</label>
                     <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter book name">
@@ -26,10 +26,12 @@
                 </div>
 
                 <div class="collapsible-header">
-                    <button type="submit" id="add" onclick="editbook()" style="padding-left: 15px; padding-right:15px;margin-right:3px;" class="btn btn-primary">Add book</button>
-                    <button type="submit" id="edit" style="padding-left: 15px; padding-right:15px; margin-left:3px;" class="btn btn-primary" onclick="editbook()">Edit book</button> 
+                    <button type="submit" style="padding-left: 15px; padding-right:15px;margin-right:3px;" class="btn btn-primary">Add book</button>
+                    <button type="submit" formaction="{{ url_for('update_book') }}" style="padding-left: 15px; padding-right:15px; margin-left:3px;" class="btn btn-primary">Edit book</button> 
                 </div>
              </form>
+
+
 
 
 

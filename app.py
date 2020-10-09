@@ -25,19 +25,22 @@ def insert_book():
     return redirect(url_for('get_books'))
 
 
-@app.route('/update_book',  methods=['POST', 'GET'])
+@app.route('/update_book',  methods=['POST'])
 def update_book():
-    if request.method == 'POST':
-        name = request.form.get('name')
-        author = request.form.get('author')
-        book = mongo.db.Books.find_one({"name": name, "author": author})
-        book.update({
-            'name': request.form.get('name'),
-            'author': request.form.get('author'),
-            'description': request.form.get('description'),
-            'price': request.form.get('price'),
-            'image': request.form.get('image')
-        })
+    name = request.form.get('name')
+    author = request.form.get('author')
+    price = request.form.get('price')
+    description = request.form.get('description')
+    image = request.form.get('image')
+    book = mongo.db.Books.find_one({"name": name, "author": author})
+    book.update({'$set':
+        {
+        "name": name,
+        "author": author,
+        "description": description,
+        "price": price,
+        "image": image
+        }})
     return redirect(url_for('get_books'))
 
 

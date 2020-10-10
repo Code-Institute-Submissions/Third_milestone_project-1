@@ -21,7 +21,10 @@ def get_books():
 @app.route('/insert_book', methods=['POST'])
 def insert_book():
     book = mongo.db.Books
+    review = mongo.db.books_reviews
     book.insert_one(request.form.to_dict())
+    name = request.form.get("name")
+    review.insert_one({"name": name})
     return redirect(url_for('get_books'))
 
 

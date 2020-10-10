@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %} 
     <div class="row col-md-12" style="margin-left: -10rem; margin-right: -5rem; padding-top: 3rem;">
         <div class="row col-md-4" style="margin-right: 2rem; height:1%;">
-            <p class="col s12" style="margin-top: 10px; background-color: #f0f5f5; padding:3px; border-style: dotted; border-width: thin; text-align: center;">Add your review</p>
+            <p class="col s12" style="margin-top: 10px; background-color: #f0f5f5; padding:3px; border-style: dotted; border-width: thin; text-align: center;">Add/Delete your review</p>
             <form  method="POST">
                 <div class="form-group col s12">
                     <label for="exampleInputEmail1">Full name</label>
@@ -19,7 +19,8 @@
                 </div>
 
                 <div class="collapsible-header">
-                    <button type="submit" formaction="{{ url_for('insert_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="insertbutton btn btn-primary">Leave a Review</button>
+                    <button type="submit" formaction="{{ url_for('insert_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="insertbutton btn btn-primary" style="padding-left: 15px; padding-right:15px; margin-left:3px;">Add</button>
+                    <button type="submit" formaction="" class="insertbutton btn btn-primary" style="padding-left: 15px; padding-right:15px; margin-left:3px;">Delete</button>
                 </div>
             </form>
         </div>

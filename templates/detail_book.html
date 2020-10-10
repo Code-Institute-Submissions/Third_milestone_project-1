@@ -18,8 +18,9 @@
                     <input type="date" class="datepicker form-control" name="date" style="margin-top:-0.3rem;" >
                 </div>
 
-                <a class="btn btn-success" formaction="{{ url_for('insert_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}">Leave a Review</a>
-
+                <div class="collapsible-header">
+                    <button type="submit" formaction="{{ url_for('insert_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="insertbutton btn btn-primary">Leave a Review</button>
+                </div>
             </form>
         </div>
 

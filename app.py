@@ -51,10 +51,8 @@ def insert_review(review_id, book_name,book_id):
     review = request.form.get("review")    
     date = request.form.get("date")  
     print(name, review, date)     
-    mongo.db.books_reviews.update({"_id": ObjectId(review_id)}, {"$set": { name: {"review": review, "date": date}}}) 
-    book = mongo.db.Books.find_one({"_id": ObjectId(book_id)})
-    review = mongo.db.books_reviews.find_one({"name": book_name})
-    return redirect(url_for('detail_book.html', book=book, reviews=review))
+    mongo.db.books_reviews.update({"name": book_name}, {"$set": { name: {"review": review, "date": date}}}) 
+    return redirect(url_for('detail_book', book_id=book_id, book_name=book_name))
     
 
 if __name__ == '__main__':

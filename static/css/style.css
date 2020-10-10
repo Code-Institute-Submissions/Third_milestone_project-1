@@ -22,9 +22,9 @@ body {
 }
 
 .img-fluid {
-    height: 200px;
-    width: 150px;
-    margin-top: 110px;
+    height: 300px;
+    width: 200px;
+    margin-top: 50px;
 }
 .addreview {
     position: relative;

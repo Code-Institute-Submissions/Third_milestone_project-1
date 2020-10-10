@@ -1,46 +1,39 @@
 {% extends 'base.html' %} {% block content %} 
-    <div class="row">
-        <div class="col-md-4">
-            <div class="" style="width: 40rem;">
-                <div class="row">
-                    <form  method="POST" class="">
-                        <div class="row">
-                            <div class="input-field">
-                                <label for="full name">Your full name</label>
-                                <input id="name" name="name" type="text" placeholder="">
-                            </div>
-                        </div>
-                
-                        <div class="row">
-                            <div class="input-field">
-                                <textarea id="textarea1" name="review" class="materialize-textarea"></textarea>
-                                <label for="disabled">Add your review</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field">
-                                <input type="date" name="date" id="" class="datepicker">
-                                <label for="date"></label>
-                            </div>
-                        </div>
-                        <a class="btn btn-success" href="{{ url_for('add_review', book_name=book.name )}}">Leave a Review</a>
-
-                    </form>
+    <div class="row col-md-12" style="margin-left: -10rem; margin-right: -5rem; padding-top: 3rem;">
+        <div class="row col-md-4" style="margin-right: 2rem; height:1%;">
+            <p class="col s12" style="margin-top: 10px; background-color: #f0f5f5; padding:3px; border-style: dotted; border-width: thin; text-align: center;">Add your review</p>
+            <form  method="POST">
+                <div class="form-group col s12">
+                    <label for="exampleInputEmail1">Full name</label>
+                    <input type="text" class="form-control" name="name" style="margin-top:-0.3rem;">
                 </div>
-            </div>
+
+                <div class="form-group col s12">
+                    <label for="exampleFormControlTextarea1">Review</label>
+                    <textarea class="form-control" name="review" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+
+                <div class="form-group col s12">
+                    <label for="exampleInputEmail1">Date</label>
+                    <input type="date" class="datepicker form-control" name="date" style="margin-top:-0.3rem;" >
+                </div>
+
+                <a class="btn btn-success" formaction="{{ url_for('insert_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}">Leave a Review</a>
+
+            </form>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-12" style="background-color: #f0f5f5; margin-right: -30rem; margin-left:2rem;">
             <div class="card mt-5 card-body">
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-md-8">
                         <h3 class="card-title">{{book.name}}</h3>
                         <h3 class="card-title">{{book.author}}</h3>
                         <p class="card-text">{{book.description}}</p>
                         <p class="card-text">Price: {{book.price}}</p>
                         <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
                     </div>
-                    <div class="col-lg-4 photo-box">
+                    <div class="col-md-4 photo-box">
                         <img class="img-fluid" src="{{book.image}}" alt="">
                     </div>
                 </div>

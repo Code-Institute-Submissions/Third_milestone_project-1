@@ -43,20 +43,18 @@ def detail_book(book_id, book_name):
     review = mongo.db.books_reviews.find_one({"name": book_name})
     return render_template('detail_book.html', book=book, reviews=review)
 
-@app.route('/add_review/<book_name>')
-def add_review(book_name):
-    book = mongo.db.Books.find_one({"name": book_name})
-    review = mongo.db.books_reviews.find_one({"name": book_name})
-    return render_template('addreview.html', review=review, book=book)
 
 
 @app.route('/insert_review/<review_id>/<book_name>/<book_id>', methods=['POST'])
 def insert_review(review_id, book_name,book_id):
-    name = request.values.get("name")    
-    review = request.values.get("review")    
-    date = request.values.get("date")       
+    name = request.form.get("name")    
+    review = request.form.get("review")    
+    date = request.form.get("date")  
+    print(name, review, date)     
     mongo.db.books_reviews.update({"_id": ObjectId(review_id)}, {"$set": { name: {"review": review, "date": date}}}) 
-    return redirect(url_for('detail_book', book_id=book_id, book_name=book_name))
+    book = mongo.db.Books.find_one({"_id": ObjectId(book_id)})
+    review = mongo.db.books_reviews.find_one({"name": book_name})
+    return redirect(url_for('detail_book.html', book=book, reviews=review))
     
 
 if __name__ == '__main__':

@@ -16,6 +16,11 @@ mongo = PyMongo(app)
 def get_books():
     return render_template("books.html", 
                            books=mongo.db.Books.find())
+                
+
+@app.route('/contact')
+def contact():
+    return render_template("contact.html") 
 
 
 @app.route('/insert_book', methods=['POST'])

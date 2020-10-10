@@ -1,11 +1,11 @@
 {% extends 'base.html' %} {% block content %} 
 
-    <div class="card mt-4 card-body" style="width: 40rem;">
+    <div class="addreview card mt-4 card-body" style="width: 40rem;">
         <div class="row col s8">
             <form action="{{ url_for('insert_review', review_id=review._id, book_id=book._id, book_name=book.name) }}" method="POST" class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
-                        <label for="full name">Full name</label>
+                        <label for="full name">Your full name</label>
                         <input id="name" name="name" type="text" placeholder="">
                     </div>
                 </div>
@@ -13,13 +13,13 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <textarea id="textarea1" name="review" class="materialize-textarea"></textarea>
-                        <label for="disabled">review</label>
+                        <label for="disabled">Add your review</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" type="text" name="date" class="validate">
-                        <label for="date">date</label>
+                        <input type="date" name="date" id="" class="datepicker">
+                        <label for="date"></label>
                     </div>
                 </div>
 

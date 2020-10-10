@@ -14,3 +14,22 @@ body {
 .task_header {
     margin-top: 5px;
 }
+
+.insertbutton {
+    padding-left: 15px; 
+    padding-right:15px;
+    margin-right:3px;
+}
+
+.img-fluid {
+    height: 200px;
+    width: 150px;
+    margin-top: 110px;
+}
+.addreview {
+    position: relative;
+    left: 60px;
+    top: 50px;
+    bottom: 50px;
+    margin-top: 200px;
+}

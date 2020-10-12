@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from flask_googlemaps import GoogleMaps
 
 
 app = Flask(__name__)
@@ -9,7 +10,37 @@ app.config["MONGO_DBNAME"] = 'task_manager'
 app.config["MONGO_URI"] = 'mongodb+srv://plxsas:Salha2019@cluster1.cqq5g.mongodb.net/Books_list?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
+GoogleMaps(app, key="ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
+@app.route("/")
+def mapview():
+    # creating a map in the view
+    mymap = Map(
+        identifier="view-side",
+        lat=37.4419,
+        lng=-122.1419,
+        markers=[(37.4419, -122.1419)]
+    )
+    sndmap = Map(
+        identifier="sndmap",
+        lat=37.4419,
+        lng=-122.1419,
+        markers=[
+          {
+             'icon': 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+             'lat': 37.4419,
+             'lng': -122.1419,
+             'infobox': "<b>Hello World</b>"
+          },
+          {
+             'icon': 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+             'lat': 37.4300,
+             'lng': -122.1400,
+             'infobox': "<b>Hello World from other place</b>"
+          }
+        ]
+    )
+    return render_template('contact.html', mymap=mymap, sndmap=sndmap)
 
 @app.route('/')
 @app.route('/get_books')

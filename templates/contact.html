@@ -49,8 +49,22 @@
                 </div>
             </div>
         </div>
-        <div style="height: 10em; display: flex; align-items: center; justify-content: center; width:800px; height: 500px;">
-            {{googlemap("simple-map", 37.4419, -122.1419)}}
+        <div class="google-map" style="height: 10em; display: flex; align-items: center; justify-content: center; width:1000px; height: 1500px; margin-bottom: 30px;">
+            {% with %}
+
+            {% set location=(-23.599097,-46.675903) %}
+            {% set style="width:800px;height:600px;"%}
+
+            {{
+            googlemap(
+                "simple-map",
+                location.0, location.1,
+                markers=[location,],
+                style=style
+                )
+            }}
+
+            {% endwith %}
         </div>
     </div>
     

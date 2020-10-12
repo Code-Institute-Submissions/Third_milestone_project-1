@@ -1,7 +1,9 @@
 body {
-  padding-top: 56px;
-  margin-right: 0px;
-  background-color: #f0f5f5;
+    background-color: #f0f5f5;
+    min-width: fit-content;
+    margin:0;
+    padding:0;
+    padding-top: 56px;
 }
 
 *.btn_small {
@@ -90,8 +92,7 @@ body {
 
 .contactcard {
     margin-top:30px;
-    margin-left:-100;
-    margin-right:-100px;
+    width: 100%;
     background-color: white;
    
 }
@@ -209,3 +210,5 @@ body {
     margin-right: -30rem; 
     margin-left:2rem;
 }
+
+

@@ -1,47 +1,50 @@
 {% extends 'base.html' %} {% block content %}                 
                 
 
-    <div class="card contactcard col-md-12">
-        <div class="row">
-            <form class="col-md-6" id="contactform" method="post">
-                <h4> Contact me</h4>
-                <div class="form-group">
-                    <div>
-                        <label class="control-label" for="fname">Name:</label>
-                        <input type="text" name="from_name" class="form-control" id="fullname" placeholder="Name" required/>
+    <div class="card" style="margin-left:-100px; margin-right:-100px; margin-top:80px;">
+        <div class="row col-md-12">
+            <div class="column col-md-6">
+                <form class="" id="contactform" method="POST" style="margin-top:0px;">
+                    <h4> Contact me</h4>
+                    <div class="form-group">
+                        <div>
+                            <label class="control-label" for="fname">Name:</label>
+                            <input type="text" name="from_name" class="form-control" id="fullname" placeholder="Name" required/>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div>
-                        <label class="control-label" for="email">Email:</label>
-                        <input type="text" name="from_email" class="form-control" id="email" placeholder="Email" required/>
+                    <div class="form-group">
+                        <div>
+                            <label class="control-label" for="email">Email:</label>
+                            <input type="text" name="from_email" class="form-control" id="email" placeholder="Email" required/>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div>     
-                        <label class="control-label" for="comment">Message:</label>
-                        <textarea rows="5" name="from_projectsummary" class="form-control" id="projectsummary" placeholder="Project Description" required></textarea>
+                    <div class="form-group">
+                        <div>     
+                            <label class="control-label" for="comment">Message:</label>
+                            <textarea rows="5" name="from_projectsummary" class="form-control" id="projectsummary" placeholder="Project Description" required></textarea>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div>
-                        <button type="submit" value="Submit" id="btnsubmit" class="btn btn-secondary center-block">Submit</button>
+                    <div class="form-group">
+                        <div>
+                            <button type="submit" value="Submit" id="btnsubmit" class="btn btn-secondary center-block">Submit</button>
+                        </div>
                     </div>
-                </div>
-            </form>
-                                    
-            <div class="col-md-6">
-                <div class="contact-info">
+                </form>
+            </div>
+
+            <div class="column col-md-6">                 
+                <div class="contact-info" style="margin-top:0px;">
                     <h4><strong>Contact address: </strong></h4>
                     <p><strong>Address:</strong> MRC Centre for Neuropsychiatric Genetics & Genomics, School of Medicine, Cardiff University, Hadyn Ellis Building, Maindy Road, CF24 4HQ</p>
                     <p><strong>Phone:</strong> +44 29206 88393</p>
                     <p><strong>Job:</strong> Research Associate</p>
-                    <!--<p><strong>Email:</strong> SaadS1@cardiff.ac.uk</p>>-->
+                        <!--<p><strong>Email:</strong> SaadS1@cardiff.ac.uk</p>>-->
                     <p><strong>Email: </strong><a href="mailto:SaadS1@cardiff.ac.uk">SaadS1@cardiff.ac.uk</a></p>
                     <div>
                         <a target="_blank" href="https://www.instagram.com/?hl=en"><i class="fa_2 fa fab fa-github"></i></a>
                         <a target="_blank" href="https://uk.linkedin.com/"><i class="fa_2 fa fa-linkedin"></i></a>
                         <a target="_blank" href="https://www.skype.com/en/"><i class="fa_2 fa fa-skype"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>

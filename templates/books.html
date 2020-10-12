@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
-    <div class="row" style="margin-left: -10rem; margin-right: 10rem; padding-top: 2rem;">
-        <div class="col-md-4" style="margin-right: -4rem; height:1%;">
-            <p style="background-color: white; margin-top: 10px;  padding:3px; border-style: dotted; border-width: thin; text-align: center;">Add/Edit your book</p>
+    <div class="row" id="bookrow">
+        <div class="col-md-4" id="bookboard">
+            <p id="adittitle">Add/Edit your book</p>
             <form  method="POST" id="editeupdate" style="margin-right: 30px;"> 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Book name</label>
@@ -25,29 +25,23 @@
                     <textarea class="form-control" style="background-color: white;" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
 
-                <div class="collapsible-header" style="background-color: #f0f5f5;">
-                    <button type="submit" formaction="{{ url_for('insert_book') }}" style="font-size:15px;padding-left: 20px; padding-right:20px; margin-right:10px;" class="btn btn-primary" >Add</button>
-                    <button type="submit" formaction="{{ url_for('update_book') }}" style="font-size:15px; padding-left: 20px; padding-right:20px; margin-left:10px;" class="btn btn-primary">Edit</button> 
+                <div class="collapsible-header">
+                    <button type="submit" formaction="{{ url_for('insert_book') }}" id="addeditbutton" class="btn btn-primary" >Add</button>
+                    <button type="submit" formaction="{{ url_for('update_book') }}" class="btn btn-primary">Edit</button> 
                 </div>
              </form>
 
-
-
-
-
-                
-    
         </div>
-        <div class="card col-md-12" style="margin-right: -50rem; margin-left:5rem; width:950px;">
+        <div class="card col-md-12" id="bookscard">
             <div class="row">
                 {% for book in books %}
-                <div class="col-md-3" style="margin-top: 30px; margin-bottom: 50px; width: 100% height: 100%; display: inline-block; float: left;">
+                <div class="col-md-3" id="cardsize">
                     <div class="" style="margin-left: 2rem;  padding: 0rem; ">
-                        <img class=""  style="width:  100px; height: 150px; object-fit: cover;" src="{{book.image}}" alt="Card image cap">
+                        <img class=""  id="bookimage" src="{{book.image}}" alt="Card image cap">
                         <div class="">
-                            <h4 class="" style="font-size: 15px; font-weight: bold;">{{book.name }}</h4>
-                            <p class="" style="font-size: 13px;">{{book.author}}</p>
-                            <a class="btn btn-success" style="font-size: 13px; margin-bottom: 100px; position: absolute; bottom: -60%;" href="{{ url_for('detail_book', book_id=book._id, book_name=book.name) }}">Read more</a>
+                            <h4 class="" id="bookname">{{book.name }}</h4>
+                            <p class="" id="authorname">{{book.author}}</p>
+                            <a class="btn btn-success" id="readmorebutton" href="{{ url_for('detail_book', book_id=book._id, book_name=book.name) }}">Read more</a>
 
                         </div>
                     </div>

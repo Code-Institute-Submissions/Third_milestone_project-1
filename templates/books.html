@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
     <div class="row" style="margin-left: -10rem; margin-right: 10rem; padding-top: 2rem;">
         <div class="col-md-4" style="margin-right: -4rem; height:1%;">
-            <p style="margin-top: 10px; background-color: #f0f5f5; padding:3px; border-style: dotted; border-width: thin; text-align: center;">Add/Edit your book</p>
+            <p style="background-color: white; margin-top: 10px;  padding:3px; border-style: dotted; border-width: thin; text-align: center;">Add/Edit your book</p>
             <form  method="POST" id="editeupdate" style="margin-right: 30px;"> 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Book name</label>
@@ -22,12 +22,12 @@
             
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Book introduction</label>
-                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" style="background-color: white;" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
 
-                <div class="collapsible-header">
-                    <button type="submit" formaction="{{ url_for('insert_book') }}" style="padding-left: 15px; padding-right:15px; margin-left:3px;" class="btn btn-primary" >Add book</button>
-                    <button type="submit" formaction="{{ url_for('update_book') }}" style="padding-left: 15px; padding-right:15px; margin-left:3px;" class="btn btn-primary">Edit book</button> 
+                <div class="collapsible-header" style="background-color: #f0f5f5;">
+                    <button type="submit" formaction="{{ url_for('insert_book') }}" style="font-size:15px;padding-left: 20px; padding-right:20px; margin-right:10px;" class="btn btn-primary" >Add</button>
+                    <button type="submit" formaction="{{ url_for('update_book') }}" style="font-size:15px; padding-left: 20px; padding-right:20px; margin-left:10px;" class="btn btn-primary">Edit</button> 
                 </div>
              </form>
 
@@ -38,7 +38,7 @@
                 
     
         </div>
-        <div class="card col-md-12" style="background-color: #f0f5f5; margin-right: -50rem; margin-left:5rem; width:950px;">
+        <div class="card col-md-12" style="margin-right: -50rem; margin-left:5rem; width:950px;">
             <div class="row">
                 {% for book in books %}
                 <div class="col-md-3" style="margin-top: 30px; margin-bottom: 50px; width: 100% height: 100%; display: inline-block; float: left;">

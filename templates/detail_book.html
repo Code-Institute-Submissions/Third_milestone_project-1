@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %} 
     <div class="row col-md-12" style="margin-left: -10rem; margin-right: -5rem; padding-top: 3rem;">
-        <div class="row col-md-4" style="margin-right: 2rem; height:1%;">
-            <p class="col s12" style="margin-top: 10px; background-color: #f0f5f5; padding:3px; border-style: dotted; border-width: thin; text-align: center;">Add/Delete your review</p>
+        <div class="row col-md-4" style="background-color: white; margin-right: 2rem; height:1%;">
+            <p class="col s12" style="background-color: #f0f5f5; margin-top: 10px;  padding:3px; border-style: dotted; border-width: thin; text-align: center;">Add/Delete your review</p>
             <form  method="POST">
                 <div class="form-group col s12">
                     <label for="exampleInputEmail1">Full name</label>
@@ -10,7 +10,8 @@
 
                 <div class="form-group col s12">
                     <label for="exampleFormControlTextarea1">Review</label>
-                    <textarea class="form-control" name="review" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" style="background-color: #f0f5f5;" name="review" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <p style="font-size: 10px;">To delete your review, you need to just enter your name in the form and hit the delete button</p>
                 </div>
 
                 <div class="form-group col s12">
@@ -19,13 +20,13 @@
                 </div>
 
                 <div class="collapsible-header">
-                    <button type="submit" formaction="{{ url_for('insert_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="insertbutton btn btn-primary" style="padding-left: 15px; padding-right:15px; margin-left:3px;">Add</button>
-                    <button type="submit" formaction="" class="insertbutton btn btn-primary" style="padding-left: 15px; padding-right:15px; margin-left:3px;">Delete</button>
+                    <button type="submit" formaction="{{ url_for('insert_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="btn btn-primary" style="padding-left: 25px; padding-right:25px; margin-left:3px;">Add</button>
+                    <button type="submit" formaction="{{ url_for('delete_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="btn btn-primary" style="padding-left: 15px; padding-right:15px; margin-left:3px;">Delete</button>
                 </div>
             </form>
         </div>
 
-        <div class="col-md-12" style="background-color: #f0f5f5; margin-right: -30rem; margin-left:2rem;">
+        <div class="col-md-12" style="margin-top: -45px; margin-right: -30rem; margin-left:2rem;">
             <div class="card mt-5 card-body">
                 <div class="row">
                     <div class="col-md-8">

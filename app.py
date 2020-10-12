@@ -52,14 +52,19 @@ def detail_book(book_id, book_name):
     return render_template('detail_book.html', book=book, reviews=review)
 
 
-
 @app.route('/insert_review/<review_id>/<book_name>/<book_id>', methods=['POST'])
 def insert_review(review_id, book_name,book_id):
     name = request.form.get("name")    
     review = request.form.get("review")    
-    date = request.form.get("date")  
-    print(name, review, date)     
+    date = request.form.get("date")      
     mongo.db.books_reviews.update({"name": book_name}, {"$set": { name: {"review": review, "date": date}}}) 
+    return redirect(url_for('detail_book', book_id=book_id, book_name=book_name))
+
+
+@app.route('/delete_review/<review_id>/<book_name>/<book_id>', methods=['POST'])
+def delete_review(review_id, book_name,book_id):
+    name = request.form.get("name") 
+    mongo.db.books_reviews.update({"_id": ObjectId(review_id)}, {"$unset": {name: 1 }})
     return redirect(url_for('detail_book', book_id=book_id, book_name=book_name))
     
 

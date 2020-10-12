@@ -1,6 +1,7 @@
 body {
   padding-top: 56px;
   margin-right: 0px;
+  background-color: #f0f5f5;
 }
 
 *.btn_small {
@@ -35,4 +36,62 @@ body {
     top: 50px;
     bottom: 50px;
     margin-top: 200px;
+}
+
+
+
+#contactform {
+    margin-top: 100px;
+    padding-left: 0px;
+    margin-left: -100;
+    margin-right: 0px;
+}
+
+#contactform h4{
+    font-size: 25px;
+    font-family: 'Abel';
+}
+
+
+.contact-info{
+    padding-left: 0px;
+    margin-right: -100;
+    margin-left: 0px;
+    font-family: 'Abel';
+}
+
+.contact-info {
+    margin-top: 100px;
+    margin-right: -50px;
+}
+
+.contact-info h4 {
+    margin-bottom: 45px;
+    font-size: 25px;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.contact-info i {
+    width: 40px;
+    height: 40px;
+}
+
+#btnsubmit {
+    margin-left: 130px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+}
+
+
+.contactcard {
+    margin-top:30px;
+    margin-left:-100;
+    margin-right:-100px;
+    background-color: white;
+   
 }

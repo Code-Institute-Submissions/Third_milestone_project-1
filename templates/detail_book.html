@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %} 
-    <div class="row col-md-12" style="margin-left: -10rem; margin-right: -5rem; padding-top: 3rem;">
-        <div class="row col-md-4" style="background-color: white; margin-right: 2rem; height:1%;">
-            <p class="col s12" style="background-color: #f0f5f5; margin-top: 10px;  padding:3px; border-style: dotted; border-width: thin; text-align: center;">Add/Delete your review</p>
+    <div class="row col-md-12" id="rowbookdetail">
+        <div class="row col-md-4" id="rowform">
+            <p class="col s12" id="rowformp">Add/Delete your review</p>
             <form  method="POST">
                 <div class="form-group col s12">
                     <label for="exampleInputEmail1">Full name</label>
@@ -16,12 +16,12 @@
 
                 <div class="form-group col s12">
                     <label for="exampleInputEmail1">Date</label>
-                    <input type="date" class="datepicker form-control" name="date" style="margin-top:-0.3rem;" >
+                    <input type="date" class="datepicker form-control" name="date" >
                 </div>
 
-                <div class="collapsible-header">
-                    <button type="submit" formaction="{{ url_for('insert_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="btn btn-primary" style="padding-left: 25px; padding-right:25px; margin-left:3px;">Add</button>
-                    <button type="submit" formaction="{{ url_for('delete_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="btn btn-primary" style="padding-left: 15px; padding-right:15px; margin-left:3px;">Delete</button>
+                <div class="collapsible-header" style="background-color: white;">
+                    <button type="submit" formaction="{{ url_for('insert_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="btn btn-primary" id="addreviewbutton">Add</button>
+                    <button type="submit" formaction="{{ url_for('delete_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="btn btn-primary" id="deletereviewbutton">Delete</button>
                 </div>
             </form>
         </div>

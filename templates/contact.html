@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}                 
                 
 
-    <div class="card" style="margin-left:-100px; margin-right:-100px; margin-top:80px;">
+    <div class="" style="margin-left:-100px; margin-right:-100px; margin-top:80px;">
         <div class="row col-md-12">
             <div class="column col-md-6">
                 <form class="" id="contactform" method="POST" style="margin-top:0px;">
@@ -49,11 +49,11 @@
                 </div>
             </div>
         </div>
-        <div class="google-map" style="height: 10em; display: flex; align-items: center; justify-content: center; width:1000px; height: 1500px; margin-bottom: 30px;">
+        <div class="google-map" style="height: 10em; display: flex; align-items: center; justify-content: center; width:800px; height: 600px; margin-bottom: 30px;">
             {% with %}
 
-            {% set location=(-23.599097,-46.675903) %}
-            {% set style="width:800px;height:600px;"%}
+                {% set location=(51.492809, -3.184275) %}
+                {% set style="width:500px;height:500px;"%}
 
             {{
             googlemap(
@@ -61,7 +61,7 @@
                 location.0, location.1,
                 markers=[location,],
                 style=style
-                )
+            )
             }}
 
             {% endwith %}

@@ -1,3 +1,8 @@
+@media (min-width: 576px) { 
+    #bookboard {
+        margin-left: 100px;
+    }
+}
 body {
     background-color: #f0f5f5;
     min-width: fit-content;
@@ -213,6 +218,7 @@ body {
 
 
 .google-map {
-   max-width: 800px;
-   max-height: 600px;
+    height: 10em; display: flex; align-items: center; 
+    justify-content: center; 
+    margin-bottom: 30px;
 }

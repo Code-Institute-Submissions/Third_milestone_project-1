@@ -1,8 +1,18 @@
-@media (min-width: 576px) { 
+@media (min-width: 320px) { 
     #bookboard {
-        margin-left: 100px;
+        margin-left: 150px;
     }
+
+  .flex-direction{
+  flex-direction:column;
+  margin-left: 500px;
+  }
+
+  #bookdetailcard {
+      width: 500px;
+  }
 }
+
 body {
     background-color: #f0f5f5;
     min-width: fit-content;

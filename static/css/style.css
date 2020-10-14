@@ -1,15 +1,22 @@
-@media (min-width: 320px) { 
-    #bookboard {
-        margin-left: 150px;
+@media (max-width: 575.98px) { 
+    #bookrow {
+        flex-direction:column;
+    }
+    #bookbscard {
+        margin-left: 100px;
+        margin-top: 50px;
     }
 
-  .flex-direction{
-  flex-direction:column;
-  margin-left: 500px;
-  }
+    .flex-direction{
+        flex-direction:column;
+    }
+    #rowform {
+      margin-left: 100px; 
+    }
 
-  #bookdetailcard {
-      width: 500px;
+    #bookdetailcard {
+      width: 380px;
+      margin-left: 6rem;
   }
 }
 
@@ -141,18 +148,20 @@ body {
     margin-right:10px;
 }
 
-#bookscard {
-    margin-right: -50rem; 
-    margin-left:5rem; 
+#bookscard1 {
+    margin-right: -70rem; 
+    margin-left:1rem; 
     width:950px;
+    display: inline;
+    
 }
 
 #cardsize {
     margin-top: 30px; 
     margin-bottom: 50px; 
-    width: 100% height: 100%; 
-    display: inline-block; 
-    float: left;
+    width: 100%;
+    height: 100%; 
+    
 }
 
 

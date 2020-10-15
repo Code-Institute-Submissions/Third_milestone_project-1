@@ -1,4 +1,4 @@
-@media (max-width: 414px) { 
+@media only screen and (max-width: 767px) { 
     #bookrow {
         flex-direction:column;
     }
@@ -7,8 +7,7 @@
     }
     #bookscard1 {
         margin-right: -50rem;
-        margin-left: 0rem;
-        display: inline;
+        margin-left: 0rem;   
     }
     #rowform {
         margin-left: 45px; 
@@ -18,17 +17,21 @@
         margin-left: 20rem;
     } 
 
-    #cardsize {
-        margin-top: 30px; 
-        margin-bottom: 50px; 
-        margin-right:10px;
-        width: 400px;
-        height: 800px; 
+    div #cardsize  {
+        margin-right: 50px;
+        height: 188px;
+        margin-bottom: 5px;
+        
     }
     #bookname {
-        font-size: 5px;
+        display: none;
     }
 
+    #authorname {
+        display: none;
+    }
+    
+    
 }
 
 @media only screen and (min-device-width : 767px) and (max-device-width : 1024px) { 

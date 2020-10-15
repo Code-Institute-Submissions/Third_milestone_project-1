@@ -39,7 +39,7 @@
                     <div class="" style="margin-left: 2rem;  padding: 0rem; ">
                         <img class=""  id="bookimage" src="{{book.image}}" alt="Card image cap">
                         <div class="">
-                            <h4 class="" id="bookname">{{book.name }}</h4>
+                            <p class="" id="bookname">{{book.name }}</p>
                             <p class="" id="authorname">{{book.author}}</p>
                             <a class="btn btn-success" id="readmorebutton" href="{{ url_for('detail_book', book_id=book._id, book_name=book.name) }}">Read more</a>
 

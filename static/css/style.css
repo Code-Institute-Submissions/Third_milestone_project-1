@@ -1,10 +1,22 @@
-@media (max-width: 575.98px) { 
-    #bookrow {
+@media (max-width: 767px) { 
+    #bookdetailcard {
+        margin-left: -40px;
+        width: 200px;
         flex-direction:column;
     }
-    #bookbscard {
-        margin-left: 100px;
-        margin-top: 50px;
+    #rowform {
+        margin-right: -100px;
+    }
+}
+
+@media (max-width: 767px) { 
+    #bookrow {
+        flex-direction:column;
+        margin-left:100px;
+    }
+    #bookboard2 {
+        margin-left:100px;
+        margin-top: 50px;   
     }
 
     .flex-direction{
@@ -16,10 +28,31 @@
 
     #bookdetailcard {
       width: 380px;
-      margin-left: 6rem;
+      margin-left: 7rem;
+    }
+}
+@media (max-width: 414px) { 
+    #bookrow {
+        flex-direction:column;
+    }
+    #bookboard2 {
+        margin-left: 100px;
+        margin-top: 50px;
+    }
+
+    #rowbookdetail {
+        margin-left: -5rem;
+    }
+    
+    #rowform {
+      margin-left: 45px; 
+    }
+
+    #bookdetailcard {
+      width: 400px;
+      margin-left: 20rem;
   }
 }
-
 body {
     background-color: #f0f5f5;
     min-width: fit-content;
@@ -193,7 +226,7 @@ body {
 }
 
 #rowbookdetail {
-    margin-left: -10rem; 
+    margin-left: -5rem; 
     margin-right: -5rem; 
     padding-top: 3rem;
 }

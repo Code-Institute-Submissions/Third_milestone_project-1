@@ -26,8 +26,8 @@
                 </div>
 
                 <div class="collapsible-header">
-                    <button type="submit" formaction="{{ url_for('insert_book') }}" id="addeditbutton" class="btn btn-primary" >Add</button>
-                    <button type="submit" formaction="{{ url_for('update_book') }}" class="btn btn-primary">Edit</button> 
+                    <button type="submit" formaction="{{ url_for('insert_book') }}" id="addeditbutton" class="btn btn-info" >Add</button>
+                    <button type="submit" formaction="{{ url_for('update_book') }}" class="btn btn-info">Edit</button> 
                 </div>
              </form>
 
@@ -41,7 +41,7 @@
                         <div class="">
                             <p class="" id="bookname">{{book.name }}</p>
                             <p class="" id="authorname">{{book.author}}</p>
-                            <a class="btn btn-success" id="readmorebutton" href="{{ url_for('detail_book', book_id=book._id, book_name=book.name) }}">Read more</a>
+                            <a class="btn btn-info" id="readmorebutton" href="{{ url_for('detail_book', book_id=book._id, book_name=book.name) }}">Read more</a>
 
                         </div>
                     </div>

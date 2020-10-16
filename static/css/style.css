@@ -3,7 +3,7 @@
         flex-direction:column;
     }
     #bookboard2 {
-        margin-left: 100px;
+        margin-left: 150px;
     }
     #bookscard1 {
         margin-right: -50rem;
@@ -13,13 +13,13 @@
         margin-left: 45px; 
     }
     #bookdetailcard {
-        width: 380px;
+        width: 457px;
         margin-left: 20rem;
     } 
 
     div #cardsize  {
         margin-right: 50px;
-        height: 188px;
+        height: 200px;
         margin-bottom: 5px;
         
     }
@@ -30,16 +30,26 @@
     #authorname {
         display: none;
     }
-    
-    
+    #readmorebutton {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-right: 1px;
+        margin-top: 2px;
+        width: 101px;
+    }
 }
 
-@media only screen and (min-device-width : 767px) and (max-device-width : 1024px) { 
+@media only screen and (min-device-width : 767px) and (max-device-width : 1342px) { 
     #bookboard2 {
         margin-left: 70px;
         margin-right: -80px;
     }
-
+    #bookboard2 {
+        margin-left: 0px;
+    }
+    #rowbookdetail {
+        margin-left: 0px;
+    }
     #bookscard1 {
         margin-right: 100px;
        
@@ -191,7 +201,7 @@ body {
     margin-top: 30px; 
     margin-bottom: 50px; 
     width: 100px;
-    height: 250px; 
+    height: 231px; 
     
 }
 

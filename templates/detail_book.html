@@ -20,8 +20,8 @@
                 </div>
 
                 <div class="collapsible-header" style="background-color: white;">
-                    <button type="submit" formaction="{{ url_for('insert_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="btn btn-primary" id="addreviewbutton">Add</button>
-                    <button type="submit" formaction="{{ url_for('delete_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="btn btn-primary" id="deletereviewbutton">Delete</button>
+                    <button type="submit" formaction="{{ url_for('insert_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="btn btn-info" id="addreviewbutton">Add</button>
+                    <button type="submit" formaction="{{ url_for('delete_review', review_id=reviews._id, book_id=book._id, book_name=book.name )}}" class="btn btn-info" id="deletereviewbutton">Delete</button>
                 </div>
             </form>
         </div>
@@ -40,7 +40,7 @@
                         <img class="img-fluid" src="{{book.image}}" alt="">
                     </div>
                 </div>
-                <a class="col-md-2 btn btn-success" target="_blank" href="{{book.buy}}">Buy</a>
+                <a class="col-md-2 btn btn-info" target="_blank" href="{{book.buy}}">Buy</a>
                 
                 
             </div> 

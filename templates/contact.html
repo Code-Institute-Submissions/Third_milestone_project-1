@@ -3,7 +3,7 @@
 
     <div class="row" style="margin-left:-100px; margin-right:-100px; margin-top:80px;">
         <div class="col-md-6">
-            <form class="" id="contactform" method="POST" style="margin-top:0px;">
+            <form class="" action="{{ url_for('contactform') }}" id="contactform" method="POST" style="margin-top:0px;">
                 <h4> Contact me</h4>
                 <div class="form-group">
                     <div>
@@ -20,7 +20,7 @@
                 <div class="form-group">
                     <div>     
                         <label class="control-label" for="comment">Message:</label>
-                        <textarea rows="5" name="from_projectsummary" class="form-control" id="projectsummary" placeholder="Project Description" required></textarea>
+                        <textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Project Description" required></textarea>
                     </div>
                 </div>
                 <div class="form-group">

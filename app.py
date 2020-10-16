@@ -3,7 +3,8 @@ from flask import Flask, render_template, redirect, request, url_for, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from flask_googlemaps import GoogleMaps
-
+from flask_mail import Mail, Message
+from form_contact import ContactForm, csrf
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'task_manager'
@@ -11,6 +12,22 @@ app.config["MONGO_URI"] = 'mongodb+srv://plxsas:Salha2019@cluster1.cqq5g.mongodb
 
 mongo = PyMongo(app)
 GoogleMaps(app)
+mail = Mail()
+
+SECRET_KEY = os.urandom(32)
+app.config['SECRET_KEY'] = SECRET_KEY
+csrf.init_app(app)
+
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'salha.saad0303@gmail.com'
+app.config['MAIL_PASSWORD'] = 'Salha2019'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+
+mail.init_app(app)
+
+mail=Mail(app)
 
 @app.route('/')
 @app.route('/get_books')
@@ -19,10 +36,22 @@ def get_books():
                            books=mongo.db.Books.find())
                 
 
-@app.route('/contact')
-def contact():
-    return render_template("contact.html") 
 
+
+@app.route('/contact', methods=['POST', 'GET'])
+def contact():
+    form = ContactForm()
+    if form.validate_on_submit():        
+        print('-------------------------')
+        print(request.form['name'])
+        print(request.form['email'])
+        print(request.form['subject'])
+        print(request.form['message'])       
+        print('-------------------------')
+        send_message(request.form)
+        return redirect('contact2.html')    
+
+    return render_template('contact2.html', form=form)
 
 @app.route('/insert_book', methods=['POST'])
 def insert_book():

@@ -3,57 +3,42 @@ from flask import Flask, render_template, redirect, request, url_for, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from flask_googlemaps import GoogleMaps
-from flask_mail import Mail, Message
-from form_contact import ContactForm, csrf
+from flask_wtf import Form
+from wtforms import TextField, TextAreaField, SubmitField
+ 
+class ContactForm(Form):
+  name = TextField("Name")
+  email = TextField("Email")
+  subject = TextField("Subject")
+  message = TextAreaField("Message")
+  submit = SubmitField("Send")
 
+  
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'task_manager'
 app.config["MONGO_URI"] = 'mongodb+srv://plxsas:Salha2019@cluster1.cqq5g.mongodb.net/Books_list?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 GoogleMaps(app)
-mail = Mail()
-
-SECRET_KEY = os.urandom(32)
-app.config['SECRET_KEY'] = SECRET_KEY
-csrf.init_app(app)
-
-app.config['MAIL_SERVER']='smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'salha.saad0303@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Salha2019'
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True
-
-mail.init_app(app)
-
-mail=Mail(app)
+app.secret_key = 'development key'
 
 @app.route('/')
 @app.route('/get_books')
 def get_books():
     return render_template("books.html", 
                            books=mongo.db.Books.find())
-                
 
-
-
-@app.route('/contact', methods=['POST', 'GET'])
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    form = ContactForm()
-    if form.validate_on_submit():        
-        print('-------------------------')
-        print(request.form['name'])
-        print(request.form['email'])
-        print(request.form['subject'])
-        print(request.form['message'])       
-        print('-------------------------')
-        send_message(request.form)
-        return redirect('contact2.html')    
-
+  form = ContactForm()
+ 
+  if request.method == 'POST':
+    return 'Form posted.'
+ 
+  elif request.method == 'GET':
     return render_template('contact2.html', form=form)
 
-@app.route('/insert_book', methods=['POST'])
+@app.route('/insert_book',  methods=['POST'])
 def insert_book():
     book = mongo.db.Books
     review = mongo.db.books_reviews

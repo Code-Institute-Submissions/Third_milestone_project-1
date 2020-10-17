@@ -22,7 +22,7 @@ The contact page is an opportunity for the user if he or she would like to get i
 
 ### 2.2 Features Left to Implement
 
-There are one pages in the nav bar (statistic page ) that I would like to develop and build in the near future. I would like to include statistic database such as book selling record over the last few years so the user will be able to see the selling profile as an indication whether if the book is on demand or not. I would like to make use of d3.js library to make a bar chart of the selling products. The database will be incoporated within MongoDB or Squal database. 
+There are one pages in the nav bar (statistic page ) that I would like to develop and build in the near future. I would like to include statistic database such as book selling record over the last few years so the user will be able to see the selling profile of each book as an indication of whether if the book is on demand or not. I would like to make use of d3.js library to make a bar chart or the scatter plots. The database will be incoporated as either MongoDB or Squal database. 
 
 
 ## 3. Technologies Used
@@ -50,17 +50,9 @@ I have used the following languages in my project built:
 ## 4. Testing 
 ### 4.1 Version control:
 
-I have asked few people for a feedback on my website in terms of its relevancy and clarity. The feedback was good and the website achieved the intended outcome of providing a summary on the gender gap in Europe. One of the feedback was that my website layout and features are presented in the most concise, meaningful way and consistency. They had a comfortable and enjoyable browsing and visualization experiences as the color scheme is concernd. 
+I have asked few people for a feedback on my website in terms of its relevancy and clarity. The feedback was good and the website achieved the intended outcome of providing a book recommendations. One of the feedback was that my website layout and features are presented in the most concise, meaningful way and consistency. They had a comfortable and enjoyable browsing and visualization experiences as the color scheme is concernd. 
 
-All of the dropdown's elements in the side bar has been tested to insure that the intended page is correctly rendered. As the main aim of this project is to provide the user with a direct comparison, a clickable men and women buttons are on display to the user to toggle between the two gender data. I have mantually tested them and are perfectly working. 
-
-I have also tested the responsive design of the graph on the salary gap page and is working as intended. Hovering over on any of the bars or segments of the graph will display the desired results.  
-
-They can view both the live version and the GitHub repository by clicking on the Font Awesome icons. They were also able to download source code by clicking on the download button on the nav bar of each page. 
-
-In the side bar, I have added two clickable buttons. One for downloading the sources code of this project from the GitHub page and the other for directing the reader to an external web page if further reading is required. They are both tested and are working. 
-
-All clickable button have been checked to insure that the correct data types have been correctly rendered. 
+All of the nav elements has been tested to insure that the intended page is correctly rendered. As the main aim of this project is to provide the user with a dynamic website, a clickable add, update, delete and submission  buttons are on display to the user to click. I have also checked that the mongoDB has been changed accordingly and all of the website is rendered with the newly updated data. All clickable button have been checked to insure that the correct data types have been correctly rendered. 
 
 All links will open in a new tab using 'target="_blank"'. All links have been manually tested to ensure that they are pointing to the correct destination. 
 
@@ -68,7 +60,6 @@ This site was tested across multiple browsers (Chrome, Safari, Internet Explorer
 
 ### 5.1 Deployment
 
-This site is hosted using GitHub pages, deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named index.html. To run locally, you can clone this repository directly into the editor of your choice by pasting git clone https://plxsas.github.io/SecondMileStoneProject/ into your terminal. Finally readme file is written to explain what are the main features of this project and how they have been deployed. 
-
+This site is hosted using GitHub pages, deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch. To run locally, you can clone this repository directly into the editor of your choice by pasting git clone https://plxsas.github.io/SecondMileStoneProject/ into your terminal. Finally readme file is written to explain what are the main features of this project and how they have been deployed. The project have additionally been deployed on heroku with all required files (requiements.txt, Procfile). I have also set up the IP and Port with the configuration variable in the heroku app. 
 
 

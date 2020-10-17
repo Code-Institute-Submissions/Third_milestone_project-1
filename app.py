@@ -9,7 +9,7 @@ from flask_googlemaps import GoogleMaps
   
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'Books_list'
-app.config["MONGO_URI"] = 'mongodb+srv://plxsas:Salha@cluster1.cqq5g.mongodb.net/Books_list?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = 'mongodb+srv://plxsas:Salha2019@cluster1.cqq5g.mongodb.net/Books_list?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 GoogleMaps(app)

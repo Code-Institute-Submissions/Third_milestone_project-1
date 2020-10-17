@@ -4,7 +4,7 @@ Stream One Project: Data Centric Development Milestone Project - Code Institute
 
 ## 1. UX
 
-I have designed this webpage to help readers finding good read and top ranked books on Psychology. The main aim was to provide users with a list of books as well as allowing them to add their favoriate books to the existing list and the functionality of submitting feedbacks on a specific book. I wanted the users to make a contirbution to this project by helping in its contents expansion. The idea is similar to some online form where everyone can provide help by making a collective effort. I have incoportated number of features to achieve the above goal which I will be explaining in depth in the next paragraph under the features section. 
+The main aim from this webpage is to help readers in the community finding top ranked and a good read Psychological book. It provides the users with a list of books and it does allow them to add their favoriate ones. The users can also have the opportunity to submit their feedbacks and reviews. The features I have implemented in the project aimed to promote users contribution to this growing form and help in its contents expansion. The idea has been adopted from other similar online forms where everyone can make a collective effort. I will be talking about these features and functionalities in the below sections. 
 
 
 

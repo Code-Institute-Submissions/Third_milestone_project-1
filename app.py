@@ -3,15 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from flask_googlemaps import GoogleMaps
-from flask_wtf import Form
-from wtforms import TextField, TextAreaField, SubmitField
- 
-class ContactForm(Form):
-  name = TextField("Name")
-  email = TextField("Email")
-  subject = TextField("Subject")
-  message = TextAreaField("Message")
-  submit = SubmitField("Send")
+
 
   
 app = Flask(__name__)
@@ -20,7 +12,8 @@ app.config["MONGO_URI"] = 'mongodb+srv://plxsas:Salha2019@cluster1.cqq5g.mongodb
 
 mongo = PyMongo(app)
 GoogleMaps(app)
-app.secret_key = 'development key'
+
+
 
 @app.route('/')
 @app.route('/get_books')
@@ -28,15 +21,15 @@ def get_books():
     return render_template("books.html", 
                            books=mongo.db.Books.find())
 
-@app.route('/contact', methods=['GET', 'POST'])
+
+@app.route('/contact1')
+def contact1():
+    return render_template("contact.html")
+
+@app.route('/contact',  methods=['POST'])
 def contact():
-  form = ContactForm()
- 
-  if request.method == 'POST':
-    return 'Form posted.'
- 
-  elif request.method == 'GET':
-    return render_template('contact2.html', form=form)
+    mongo.db.contactform.insert_one(request.form.to_dict())
+    return render_template('contact.html')
 
 @app.route('/insert_book',  methods=['POST'])
 def insert_book():

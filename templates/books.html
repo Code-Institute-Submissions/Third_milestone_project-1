@@ -22,12 +22,12 @@
             
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Book introduction</label>
-                    <textarea class="form-control" style="background-color: white;" name="description" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                    <textarea class="form-control" style="background-color: white;" name="description" id="exampleFormControlTextarea1" rows="7" required></textarea>
                 </div>
 
                 <div class="collapsible-header">
-                    <button type="submit" formaction="{{ url_for('insert_book') }}" id="addeditbutton" class="btn btn-info" >Add</button>
-                    <button type="submit" formaction="{{ url_for('update_book') }}" class="btn btn-info">Edit</button> 
+                    <button type="submit" formaction="{{ url_for('insert_book') }}" id="addbutton" class="btn btn-info" >Add</button>
+                    <button type="submit" formaction="{{ url_for('update_book') }}" id="editbutton" class="btn btn-info">Edit</button> 
                 </div>
              </form>
 

@@ -37,6 +37,10 @@
         margin-top: 2px;
         width: 101px;
     }
+
+    .contactform {
+        width: 270px;
+    }
 }
 
 @media only screen and (min-device-width : 767px) and (max-device-width : 1342px) { 
@@ -182,11 +186,21 @@ body {
     text-align: center;
 }
 
-#addeditbutton {
+#addbutton {
+    font-size:15px;
+    padding-left: 20px; 
+    padding-right:20px; 
+    margin-right:20px;
+    margin-left:50px;
+    margin-bottom: 20px;
+}
+
+#editbutton {
     font-size:15px;
     padding-left: 20px; 
     padding-right:20px; 
     margin-right:10px;
+    margin-bottom: 20px;
 }
 
 #bookscard1 {
@@ -243,6 +257,8 @@ body {
     background-color: white; 
     margin-right: 2rem; 
     height:1%;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 #rowformp {
@@ -260,14 +276,16 @@ body {
 
 #addreviewbutton {
     padding-left: 25px; 
-    padding-right:25px; 
-    margin-left:3px;
+    padding-right:30px; 
+    
+    
 }
 
 #deletereviewbutton {
     padding-left: 15px; 
     padding-right:15px; 
     margin-left:3px;
+    
 }
 
 #bookdetailcard {
@@ -281,4 +299,17 @@ body {
     height: 10em; display: flex; align-items: center; 
     justify-content: center; 
     margin-bottom: 30px;
+}
+
+.google-map {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width:800px; 
+    height: 600px; 
+    margin-bottom: 30px;
+}
+
+.contactform {
+    margin-top: 30px;
 }

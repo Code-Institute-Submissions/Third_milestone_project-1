@@ -1,14 +1,15 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for, request
 from flask_pymongo import PyMongo
+from pymongo import MongoClient
 from bson.objectid import ObjectId
 from flask_googlemaps import GoogleMaps
 
 
   
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'task_manager'
-app.config["MONGO_URI"] = 'mongodb+srv://plxsas:Salha2019@cluster1.cqq5g.mongodb.net/Books_list?retryWrites=true&w=majority'
+app.config["MONGO_DBNAME"] = 'Books_list'
+app.config["MONGO_URI"] = os.getenv("MONGO_URI", 'mongodb://localhost')
 
 mongo = PyMongo(app)
 GoogleMaps(app)

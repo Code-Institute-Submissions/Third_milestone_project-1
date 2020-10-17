@@ -12,6 +12,8 @@ The main aim from this webpage is to help readers in the community finding top r
 
 ### 2.1 Existing Features
 
+All of the below features are using three MongoDB database collections. One collection is called Book and contain the book list. The books_review has the customer review database and the contactform collections has the user contact information pushed via the contact form. 
+
 Throughout the two pages of my design I have made it as easy as possible for the user to access the information and have enjoyable experience. On the home, the user will see a list of selected books with book cover, title, author and clickable Readmore button for more information. The book list contains so far only 12 books but it is expandable. This is becuase the users can easily add their recommended book via filling the form on the left of the screen. To submit book to the database, all of the input fields in the form have to be filled. These include the book name, author name, book's cover url image link, book introduction and the price. As soon as the add button is clicked, a jinja template funtion (insert book) will be called to update MongoDB database collection and re-render the home page. By using the same form,  the user will have the opportunity to modify any of the existed book in the list by submitting another form with the information related to the updated book. The jinja function  in the app.py file will then search the mongodb database using the first two fields in the form (book name and author name). Once the newly added or updated book is added to the database the page gets automatically refreshed.
 
 
